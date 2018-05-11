@@ -1,0 +1,8 @@
+{% for interface, data in l3.interfaces.items() %}
+protocols {
+    ospf {
+        area {{ l3.interfaces.ospf_area }} {
+            interface {{ interface }} .0;
+        }
+    }
+}
