@@ -60,10 +60,10 @@ brg = InitBrigade(
 
 
 # Let's just filter the hosts we want to operate on
-#cmh = brg.filter(type="network_device", site="cmh")
+target = brg.filter(type="router")
 
 # Let's call the grouped tasks defined above
-results = run(task=configure)
+results = target.run(task=configure)
 
 # Let's show everything on screen
 print_title("Playbook to configure the network")
